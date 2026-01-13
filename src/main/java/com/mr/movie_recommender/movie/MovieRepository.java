@@ -1,0 +1,12 @@
+package com.mr.movie_recommender.movie;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.Optional;
+
+@Repository
+public interface MovieRepository extends JpaRepository<Movie, String> {
+    void deleteByName(String name);
+    Optional<Movie> findByName(String name);
+}
